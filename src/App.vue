@@ -34,10 +34,10 @@ const onFindClicked = async () => {
 
 }
 
-const onUserSelected = (id) => {
-  console.log(id)
-  // mocked for now swap with real api
-  selectedUser.value = userDetails
+const onUserSelected = async (userId) => {
+  const response = await fetch(`https://api.github.com/users/${userId}`)
+  const data = await response.json()
+  selectedUser.value = data
 }
 </script>
 

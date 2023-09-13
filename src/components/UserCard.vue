@@ -5,7 +5,7 @@ const emit = defineEmits(['select-user'])
 
 
 <template>
-    <div class="user-card__container" @click="emit('select-user', user.id)">
+    <div class="user-card__container" @click="emit('select-user', user.login)">
        <img :src="user.avatar_url" class="user-card__image"/>
        <a :href="user.html_url" target="_blank">{{ user.login }}</a>
     </div>
